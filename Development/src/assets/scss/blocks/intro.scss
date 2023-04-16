@@ -1,0 +1,55 @@
+.intro {
+	background: $primary;
+	padding: 19rem 0 0 0;
+
+	@include breakpoint($tablet-bp) {
+		padding: 12rem 0 0 0;
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		@include breakpoint($md-bp) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__description {
+		display: flex;
+		flex-direction: column;
+		max-width: 60rem;
+	}
+
+	&__title {
+		@include adaptiv-font(48, 24);
+		font-weight: 700;
+		line-height: 1.35;
+		margin: 0 0 2rem 0;
+	}
+
+	&__text {
+		@include adaptiv-font(14, 12);
+		font-family: "Poppins", sans-serif;
+		font-weight: 500;
+		color: $font-add;
+		margin: 0 0 3rem 0;
+		max-width: 44rem;
+	}
+
+	&__button {
+		margin: 0 0 5rem 0;
+	}
+
+	&__search {
+		margin: 0 0 4rem 0;
+	}
+
+	&__user {
+		margin: 0 0 4rem 0;
+	}
+
+	&__circle {
+		align-self: end;
+	}
+}

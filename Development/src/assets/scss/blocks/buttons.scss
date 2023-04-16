@@ -1,0 +1,44 @@
+.button {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  background: $green;
+  color: $white;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  border-radius: 3rem;
+
+  &--modal {
+    max-width: 13.2rem;
+
+    &:hover {
+      box-shadow: 0 0 10px 5px rgba($green, 0.5);
+    }
+
+    &:active {
+      box-shadow: 0 0 10px 5px rgba($green, 1);
+    }
+
+    &:disabled {
+      color: rgba($black, 0.2);
+    }
+  }
+
+  &--account {
+    border: 1px solid $primary;
+    max-width: 11rem;
+
+    &:hover {
+      box-shadow: 0 0 10px 5px rgba($green, 0.5);
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+  }
+}

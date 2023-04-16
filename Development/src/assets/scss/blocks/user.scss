@@ -1,0 +1,48 @@
+.user {
+	display: flex;
+	align-items: center;
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		width: 3.8rem;
+		height: 3.8rem;
+		border-radius: 50%;
+		border: 3px solid white;
+
+		&:nth-child(1) {
+			background: url("../images/user/user-1.webp") center center / cover no-repeat;
+			z-index: 4;
+		}
+
+		&:nth-child(2) {
+			background: url("../images/user/user-2.webp") center center / cover no-repeat;
+			z-index: 3;
+		}
+
+		&:nth-child(3) {
+			background: url("../images/user/user-3.webp") center center / cover no-repeat;
+			z-index: 2;
+
+		}
+
+		&:last-child {
+			background: url("../images/icons/plus-icon.svg") center center no-repeat, $orange;
+		}
+
+		&:not(:first-child) {
+			margin: 0 0 0 -1.5rem;
+		}
+	}
+
+	&__text {
+		@include adaptiv-font(16, 12);
+	}
+
+	&__price-plan {
+		color: $orange;
+		margin: 0 0 0 1rem;
+	}
+}

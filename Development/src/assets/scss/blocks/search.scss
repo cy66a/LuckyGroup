@@ -1,0 +1,31 @@
+.search {
+	&__field {
+		display: flex;
+		@include adaptiv-font(16, 12);
+		background-color: $white;
+		border-radius: 10rem;
+		position: relative;
+		padding: 0.5rem;
+		overflow: hidden;
+	}
+
+	&__input {
+		flex: 1 1 100%;
+		padding: 2rem;
+	}
+
+	&__cancel-button {
+		transform: scale(0);
+		background: none;
+		margin: 0 1rem 0 0;
+		transition: all 0.3s ease-in-out;
+
+		&.active {
+			transform: scale(1) rotate(90deg);
+		}
+	}
+
+	&__find-button {
+		background: none;
+	}
+}

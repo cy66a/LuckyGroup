@@ -1,0 +1,167 @@
+.menu {
+  &__item {
+    position: relative;
+    margin: 0 0 0 5rem;
+    font-size: 2.3rem;
+
+    &--account {
+      margin: 0 0 0 15rem;
+    }
+  }
+
+  &__icon {
+    display: none;
+  }
+
+  &__link {
+    color: $font;
+
+  }
+
+  &__link--account {
+    font-size: 1.6rem;
+    color: $white;
+  }
+}
+
+/* Адаптив */
+
+@media (min-width: $tablet-bp) {
+  .menu {
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      padding: 10px 0;
+    }
+
+    &__link {
+      transition: all 0.3s ease 0s;
+      position: relative;
+    
+      &::before {
+        transition: all .2s ease-in-out;
+        position: absolute;
+        content: '';
+        background: $orange;
+        width: 0rem;
+        height: 1.5px;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+  
+      &:hover {
+        &::before {
+          width: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-bp) {
+  .menu {
+    &__icon {
+      position: relative;
+      z-index: 5;
+      display: block;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    &__icon span,
+    &__icon::before,
+    &__icon::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 10%;
+      background-color: $font;
+      transition: all 0.3s ease 0s;
+    }
+
+    &__icon::before,
+    &__icon::after {
+      content: "";
+    }
+
+    &__icon::before {
+      top: 0;
+    }
+
+    &__icon span {
+      top: 50%;
+      transform: scale(1) translate(0px, -50%);
+    }
+
+    &__icon._active span {
+      transform: scale(0) translate(0px, -50%);
+    }
+
+    &__icon::after {
+      bottom: 0;
+    }
+
+    &__icon._active::before {
+      top: 50%;
+      transform: rotate(-45deg) translate(0, -50%);
+    }
+
+    &__icon._active::after {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0, 50%);
+    }
+
+    &__body {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      overflow: auto;
+      padding: 100px 30px 30px;
+      width: 100%;
+      height: 100%;
+      background-color: $grey;
+      transition: left 0.3s ease 0s;
+    }
+
+    &__body._active {
+      left: 0;
+    }
+
+    &__body::before {
+      content: "";
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: $header-height;
+    }
+
+    &__item {
+      flex-wrap: wrap;
+      margin: 0 0 30px;
+    }
+
+    &__item:last-child {
+      margin: 9rem 0 0;
+    }
+
+    &__link {
+      font-size: 24px;
+    }
+  }
+}
+
+body._touch .menu__item {
+  display: flex;
+  align-items: center;
+}
+
+body._touch .menu__link {
+  flex: 1 1 auto;
+}

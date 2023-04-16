@@ -1,0 +1,38 @@
+// Imports
+@import 'mixins';
+@import 'vars';
+@import 'settings';
+@import 'vendor/reset';
+@import 'vendor/reset-frilanser';
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: $primary;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.4rem;
+	line-height: 1.5;
+	color: $font;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+.orange-color {
+	color: $orange;
+}
+
+
+// Blocks
+@import 'blocks/container';
+@import 'blocks/buttons';
+@import 'blocks/header';
+@import 'blocks/menu';
+@import 'blocks/intro';
+@import 'blocks/search';
+@import 'blocks/circle';
+@import 'blocks/user';
+@import 'blocks/footer';
